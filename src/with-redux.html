@@ -43,7 +43,10 @@
             }
 
             //store 생성 및 받아오기
-            var store = Redux.createStore(reducer);
+            var store = Redux.createStore(
+                reducer,
+                window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+            );
 
             
             function red() {
@@ -57,7 +60,7 @@
                     </div>
                 `
             }
-
+  
             //red가 render의 역할을 하게 된다.
             store.subscribe(red);
             red();
